@@ -67,10 +67,14 @@ class HashTableTests {
 
 	@Test
 	void "Keys with same hashcode and equality are considered same key"() {
+		println "Creating hashtable"
 		HashTable<Key, String> ht = new HashTable<>()
+		println "One"
 		ht.put(new One(), "One")
+		println "Two"
 		ht.put(new One(), "Two")
 
+		println "Checking"
 		assert ht.get(new One()) == "Two"
 	}
 }
