@@ -31,14 +31,11 @@ public class HashTable<K, V> {
 
 	public V get(K key) {
 		final int bucketIndex = key.hashCode() % BUCKET_COUNT;
-		System.out.println("key: " + key + ", index: " + bucketIndex);
 		LinkedEntry<K, V> entry = buckets[bucketIndex];
 		while (entry != null) {
 			if (entry.key.equals(key)) {
-				System.out.println("   returning: " + entry.value);
 				return entry.value;
 			} else {
-				System.out.println("   next entry: " + entry.next);
 				entry = entry.next;
 			}
 		}
